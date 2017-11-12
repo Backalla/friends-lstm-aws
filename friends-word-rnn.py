@@ -22,7 +22,7 @@ from datetime import datetime
 # In[ ]:
 
 
-with open("./data/friends/all_scripts.txt") as scripts_fileobj:
+with open("./data/all_scripts.txt") as scripts_fileobj:
     all_scripts = scripts_fileobj.read().strip().lower().decode('utf8').encode('ascii', errors='ignore')
 
 
@@ -163,8 +163,8 @@ model.compile(loss='categorical_crossentropy', optimizer='adam')
 # In[ ]:
 
 
-model_path = "./model/model3_friends/"
-filepath="./model/model3_friends/weights-improvement-{epoch:02d}-{loss:.4f}.hdf5"
+model_path = "./model/"
+filepath="./model/weights-improvement-{epoch:02d}-{loss:.4f}.hdf5"
 checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=False, mode='min')
 callbacks_list = [checkpoint]
 
